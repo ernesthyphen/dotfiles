@@ -1,6 +1,6 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/dracula.toml"
+    "~/.config/alacritty/themes/dracula.toml"
 ]
 
 [font]
