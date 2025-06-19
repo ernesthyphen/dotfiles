@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Enable fzf autocomplete and keybindings
+[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
+[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -25,6 +29,7 @@ alias cp='cp -i' #-i prompts user before overwriting
 
 alias hf='history|fzf'
 alias vim='nvim'
+
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
