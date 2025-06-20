@@ -3,8 +3,8 @@ _k_friendly_name=Activity Manager
 switch-to-activity-393136de-9fee-4962-81df-10f42d42a521=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
-Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,
-Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,
+Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Switch to Last-Used Keyboard Layout
+Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
 
 [kaccess]
@@ -61,7 +61,7 @@ MoveZoomRight=none,none,Move Zoomed Area to Right
 MoveZoomUp=none,none,Move Zoomed Area Upwards
 Overview=Meta+W,Meta+W,Toggle Overview
 Setup Window Shortcut=none,,Setup Window Shortcut
-Show Desktop=Meta+D,Meta+D,Peek at Desktop
+Show Desktop=none,Meta+D,Peek at Desktop
 Switch One Desktop Down=Meta+Ctrl+Down,Meta+Ctrl+Down,Switch One Desktop Down
 Switch One Desktop Up=Meta+Ctrl+Up,Meta+Ctrl+Up,Switch One Desktop Up
 Switch One Desktop to the Left=Meta+Ctrl+Left,Meta+Ctrl+Left,Switch One Desktop to the Left
@@ -263,16 +263,17 @@ _launch=Ctrl+Alt+T\tMeta+Return
 [services][com.mitchellh.ghostty.desktop]
 _launch=Ctrl+Alt+T
 
-[services][net.local.rofi.desktop]
-_launch=Ctrl+D
-
 [services][org.flameshot.Flameshot.desktop]
 Capture=Meta+Shift+S
 
 [services][org.kde.konsole.desktop]
 _launch=none
 
+[services][org.kde.krunner.desktop]
+_launch=Alt+F2\tSearch\tMeta+D\tAlt+Space
+
 [services][org.kde.spectacle.desktop]
+RecordRegion=none
 RecordWindow=none
 RectangularRegionScreenShot=none
 _launch=Print

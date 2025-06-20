@@ -1,0 +1,17 @@
+[64c9bb20-3e02-4cde-953c-137561f5847c]
+Description=Launch Discord on #3
+desktops=a4a32df6-ec56-48ca-8ce8-eab885b33a98
+desktopsrule=3
+wmclass=discord
+wmclassmatch=1
+
+[General]
+count=2
+rules=f5b700dc-443f-4ce7-bad5-b20e708424ce,64c9bb20-3e02-4cde-953c-137561f5847c
+
+[f5b700dc-443f-4ce7-bad5-b20e708424ce]
+Description=Launch Obsidian on #4
+desktops=5bd7a2d5-bdda-4d7a-a1fb-1579213afa8c
+desktopsrule=3
+wmclass=obsidian
+wmclassmatch=1
