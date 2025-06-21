@@ -10,8 +10,8 @@ count=2
 rules=f5b700dc-443f-4ce7-bad5-b20e708424ce,64c9bb20-3e02-4cde-953c-137561f5847c
 
 [f5b700dc-443f-4ce7-bad5-b20e708424ce]
-Description=Launch Obsidian on #4
-desktops=5bd7a2d5-bdda-4d7a-a1fb-1579213afa8c
+Description=Launch Obsidian on #2
+desktops=ee4bda41-636f-4661-a192-f7a055be772c
 desktopsrule=3
 wmclass=obsidian
 wmclassmatch=1
