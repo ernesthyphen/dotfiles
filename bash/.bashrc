@@ -13,6 +13,9 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
+#add both Flatpak-related directories to XDG_DATA_DIRS, while preserving the default paths
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}:/var/lib/flatpak/exports/share:/home/steve/.local/share/flatpak/exports/share"
+
 ## Choose your weapon
 EDITOR=/usr/bin/nvim
 #EDITOR=/usr/bin/emacs
@@ -29,7 +32,7 @@ alias cp='cp -i' #-i prompts user before overwriting
 
 alias hf='history|fzf'
 alias vim='nvim'
-
+alias ff='fastfetch'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options

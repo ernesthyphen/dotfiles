@@ -22,3 +22,6 @@ style = "Italic"
 family = "JetBrainsMono NF"
 style = "Regular"
 
+[window]
+decorations = "full"
+opacity = 0.8
