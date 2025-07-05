@@ -29,7 +29,7 @@ alias cp='cp -i' #-i prompts user before overwriting
 
 alias hf='history|fzf'
 alias vim='nvim'
-
+alias neovim='nvim'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
