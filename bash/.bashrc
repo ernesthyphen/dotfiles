@@ -35,6 +35,9 @@ alias vim='nvim'
 alias neovim='nvim'
 alias ff='fastfetch'
 
+#use bat instead of cat temporarily
+alias cat='bat'
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -53,3 +56,4 @@ PS1='[\u@\h \W]\$ '
 fastfetch
 
 eval "$(starship init bash)"
+
