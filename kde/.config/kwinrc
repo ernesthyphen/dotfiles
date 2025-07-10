@@ -94,6 +94,9 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][ee4bda41-636f-4661-a192-f7a055be772c][e19bebe6-91f1-48b0-ae43-9b83792d4880]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Wayland]
+EnablePrimarySelection=false
+
 [Xwayland]
 Scale=1
 
