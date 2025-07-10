@@ -1,4 +1,4 @@
-#
+# ernesthyphen 2025
 # ~/.bashrc
 #
 
@@ -56,4 +56,15 @@ PS1='[\u@\h \W]\$ '
 fastfetch
 
 eval "$(starship init bash)"
+
+# Enable programmable completion features
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+fi
+
+#git autocomplete 
+source /usr/share/bash-completion/completions/git
+
+# SSH host autocompletion
+complete -o default -o nospace -W "$(awk '/^Host / {for (i=2; i<=NF; i++) print $i}' ~/.ssh/config 2>/dev/null)" ssh scp sftp
 
