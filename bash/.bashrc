@@ -31,7 +31,7 @@ alias ls='ls -hF --color=auto'
 alias ll='ls -lh'
 alias la='ll -A'
 alias l='ls -CF'
-alias lr='ls -R'                    # recursive ls
+alias lr='ls -Ra | more'                    # recursive ls
 alias lm='la | more'
 
 ## Safety checks
