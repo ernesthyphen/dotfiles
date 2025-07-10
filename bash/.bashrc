@@ -1,16 +1,14 @@
-# ernesthyphen 2025
+#▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+#█░▄▄█░▄▄▀█░▄▄▀█░▄▄█░▄▄█▄░▄█░████░██░█▀▄▄▀█░████░▄▄█░▄▄▀
+#█░▄▄█░▀▀▄█░██░█░▄▄█▄▄▀██░██░▄▄░█░▀▀░█░▀▀░█░▄▄░█░▄▄█░██░
+#█▄▄▄█▄█▄▄█▄██▄█▄▄▄█▄▄▄██▄██▄██▄█▀▀▀▄█░████▄██▄█▄▄▄█▄██▄
+#▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 # ~/.bashrc
 #
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Enable fzf autocomplete and keybindings
-[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
-[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
-
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 #add both Flatpak-related directories to XDG_DATA_DIRS, while preserving the default paths
@@ -22,13 +20,24 @@ EDITOR=/usr/bin/nvim
 #EDITOR=/usr/bin/nano
 export EDITOR
 
-# aliases
+## Modified commands
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias mkdir='mkdir -p -v'
+alias ping='ping -c 5'
+
+# ls
+alias ls='ls -hF --color=auto'
 alias ll='ls -lh'
-alias la='ls -lha'
+alias la='ll -A'
 alias l='ls -CF'
+alias lr='ls -R'                    # recursive ls
+alias lm='la | more'
+
+## Safety checks
 alias rm='rm -i' #-i prompts user before deletion
 alias cp='cp -i' #-i prompts user before overwriting
+alias mv='mv -i'
 
 alias hf='history|fzf'
 alias vim='nvim'
@@ -56,6 +65,10 @@ PS1='[\u@\h \W]\$ '
 fastfetch
 
 eval "$(starship init bash)"
+
+# Enable fzf autocomplete and keybindings
+[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
+[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
 
 # Enable programmable completion features
 if [ -f /usr/share/bash-completion/bash_completion ]; then
