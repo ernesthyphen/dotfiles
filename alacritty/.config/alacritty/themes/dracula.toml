@@ -1,33 +1,28 @@
-# Colors (test)
+# Colors (Dracula)
 
+# Default colors
 [colors.primary]
-background = "#0B0F0A"  # near-black
-foreground = "#A9FF68"  # vibrant lime green
+background = '#282a36'
+foreground = '#f8f8f2'
 
+# Normal colors
 [colors.normal]
-black   = "#0B0F0A"
-red     = "#FF5E5E"     # bright danger red
-green   = "#50FA7B"     # vivid green
-yellow  = "#F1FA8C"     # lemon yellow
-blue    = "#8BE9FD"     # electric cyan
-magenta = "#BD93F9"     # subtle lavender
-cyan    = "#34FFDC"     # aqua green
-white   = "#E6FFE6"     # soft off-white
+black   = '#000000'
+red     = '#ff5555'
+green   = '#50fa7b'
+yellow  = '#f1fa8c'
+blue    = '#bd93f9'
+magenta = '#ff79c6'
+cyan    = '#8be9fd'
+white   = '#bbbbbb'
 
+# Bright colors
 [colors.bright]
-black   = "#4D4D4D"
-red     = "#FF6E6E"
-green   = "#A9FF68"
-yellow  = "#FFFFA5"
-blue    = "#9AEDFE"
-magenta = "#D6ACFF"
-cyan    = "#6CFFE4"
-white   = "#FFFFFF"
-
-[colors.cursor]
-text = "#0B0F0A"
-cursor = "#A9FF68"
-
-[colors.selection]
-text = "#0B0F0A"
-background = "#A9FF68"
+black   = '#555555'
+red     = '#ff5555'
+green   = '#50fa7b'
+yellow  = '#f1fa8c'
+blue    = '#caa9fa'
+magenta = '#ff79c6'
+cyan    = '#8be9fd'
+white   = '#ffffff'
