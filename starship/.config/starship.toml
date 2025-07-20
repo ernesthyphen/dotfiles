@@ -4,6 +4,7 @@ format = """
 [](red)\
 $os\
 $username\
+$hostname\
 [](bg:orange fg:red)\
 $directory\
 [](bg:yellow fg:orange)\
@@ -178,3 +179,8 @@ green = "#50FA7B"
 purple = "#BD93F9"
 cyan = "#8BE9FD"
 pink = "#FF78C6"
+
+[hostname]
+ssh_only = true 
+format = '[🖧 $hostname](bg:pink fg:base)'
+style = "bg:pink fg:base"
