@@ -10,28 +10,10 @@
   color: @foreground;
 }
 
-window#waybar {
+#waybar {
   background: @background;
   border-bottom: 2px solid @selection;
   padding: 2px;
-}
-
-#workspaces button {
-  background: transparent;
-  color: @comment;
-  border-radius: 6px;
-  margin: 0 4px;
-}
-
-#workspaces button.focused {
-  background: @selection;
-  color: @cyan;
-  border: 1px solid @cyan;
-}
-
-#workspaces button.urgent {
-  background: @red;
-  color: @background;
 }
 
 #clock,
@@ -73,6 +55,22 @@ window#waybar {
 
 #battery.charging {
   background: @green;
+  color: @background;
+}
+
+/* Visible on another monitor */
+#workspaces button.visible {
+  border: 2px dashed @purple;
+}
+
+/* Active (focused) on this monitor – placed AFTER .visible so it wins */
+#workspaces button.active {
+  border: 2px solid @purple;
+}
+
+/* Optional: urgent still overrides everything */
+#workspaces button.urgent {
+  background: @red;
   color: @background;
 }
 

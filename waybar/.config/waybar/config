@@ -15,5 +15,5 @@
     "modules-center": ["hyprland/window"],
     "modules-right": ["cpu", "memory", "network", "battery", "mpd", "pulseaudio", "tray", "clock"] 
   }
-]
-
+  ]
+  
