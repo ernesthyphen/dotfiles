@@ -1,0 +1,19 @@
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "output": "DP-1",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["clock"]
+  },
+  {
+    "layer": "top",
+    "position": "top",
+    "output": "DP-3",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["cpu", "memory", "network", "battery", "mpd", "pulseaudio", "tray", "clock"] 
+  }
+]
+
