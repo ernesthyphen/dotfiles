@@ -2,6 +2,7 @@
 _k_friendly_name=Activity Manager
 switch-to-activity-393136de-9fee-4962-81df-10f42d42a521=none,none,Switch to activity "Default"
 switch-to-activity-59711a31-1d40-4f8b-9bc8-4a906568964c=none,none,Switch to activity "Default"
+switch-to-activity-97d30a90-c48c-4711-9953-eb1f9354c0ec=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
 Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Switch to Last-Used Keyboard Layout
@@ -257,6 +258,9 @@ stop current activity=Meta+S,Meta+S,Stop Current Activity
 switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
+
+[services][Alacritty.desktop]
+_launch=Ctrl+Alt+T\tMeta+Return
 
 [services][com.mitchellh.ghostty.desktop]
 _launch=Meta+Return\tCtrl+Alt+T
