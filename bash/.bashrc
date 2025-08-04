@@ -48,7 +48,7 @@ alias ff='fastfetch'
 alias cat='bat'
 
 #add preview to fzf
-alias fzf="fzf --preview='cat {}'"
+alias fzf="fzf --preview='bat --color=always {}'"
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
