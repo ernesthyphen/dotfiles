@@ -14,6 +14,11 @@ PS1='[\u@\h \W]\$ '
 #add both Flatpak-related directories to XDG_DATA_DIRS, while preserving the default paths
 export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}:/var/lib/flatpak/exports/share:/home/steve/.local/share/flatpak/exports/share"
 
+#python env vars
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 ## Choose your weapon
 EDITOR=/usr/bin/nvim
 #EDITOR=/usr/bin/emacs
