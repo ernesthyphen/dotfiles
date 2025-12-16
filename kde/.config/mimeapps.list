@@ -1,5 +1,6 @@
 [Added Associations]
 application/json=nvim.desktop;
+application/octet-stream=org.kde.kate.desktop;
 application/x-docbook+xml=nvim.desktop;
 application/x-matroska=mpv.desktop;vlc.desktop;
 application/x-yaml=nvim.desktop;
@@ -62,6 +63,7 @@ x-scheme-handler/geo=openstreetmap-geo-handler.desktop;
 
 [Default Applications]
 application/json=nvim.desktop;
+application/octet-stream=org.kde.kate.desktop;
 application/x-docbook+xml=nvim.desktop;
 application/x-matroska=mpv.desktop;
 application/x-yaml=nvim.desktop;
