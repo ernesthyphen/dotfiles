@@ -11,6 +11,37 @@
 
 PS1='[\u@\h \W]\$ '
 
+# Set terminal title to current command or directory
+# Only in interactive shells
+[[ $- != *i* ]] && return
+
+__title_set() {
+  printf '\033]0;%s\007' "$1"
+}
+
+__title_prompt() {
+  __title_set "$USER@$HOSTNAME: ${PWD/#$HOME/~}"
+}
+
+__title_preexec() {
+  # BASH_COMMAND is the command about to run
+  local cmd="$BASH_COMMAND"
+
+  # Ignore our own plumbing and other noisy internals
+  case "$cmd" in
+    __title_*|history*|trap*|PROMPT_COMMAND*|printf* ) return ;;
+  esac
+
+  # Keep it readable: first word (so "btop", not the whole pipeline)
+  __title_set "${cmd%% *}"
+}
+
+# Set title to command when it starts...
+trap '__title_preexec' DEBUG
+# ...and set it back to a nice prompt title when we return to the prompt.
+PROMPT_COMMAND='__title_prompt'
+
+
 #add both Flatpak-related directories to XDG_DATA_DIRS, while preserving the default paths
 export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}:/var/lib/flatpak/exports/share:/home/steve/.local/share/flatpak/exports/share"
 
@@ -89,3 +120,6 @@ source /usr/share/bash-completion/completions/git
 # SSH host autocompletion
 complete -o default -o nospace -W "$(awk '/^Host / {for (i=2; i<=NF; i++) print $i}' ~/.ssh/config 2>/dev/null)" ssh scp sftp
 
+
+# Created by `pipx` on 2026-02-22 19:28:29
+export PATH="$PATH:/home/steve/.local/bin"
