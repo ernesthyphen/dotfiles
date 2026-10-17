@@ -9,11 +9,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+GREEN='\[\e[32m\]'
+BLUE='\[\e[34m\]'
+RESET='\[\e[0m\]'
+
+PS1="${GREEN}\u@\h${RESET}:${BLUE}\w${RESET}\$ "
 
 # Set terminal title to current command or directory
-# Only in interactive shells
-[[ $- != *i* ]] && return
 
 __title_set() {
   printf '\033]0;%s\007' "$1"
@@ -39,36 +41,34 @@ __title_preexec() {
 # Set title to command when it starts...
 trap '__title_preexec' DEBUG
 # ...and set it back to a nice prompt title when we return to the prompt.
-PROMPT_COMMAND='__title_prompt'
+PROMPT_COMMAND="__title_prompt${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 
 
 #add both Flatpak-related directories to XDG_DATA_DIRS, while preserving the default paths
-export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}:/var/lib/flatpak/exports/share:/home/steve/.local/share/flatpak/exports/share"
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
 
 #python env vars
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
-## Choose your weapon
-EDITOR=/usr/bin/nvim
-#EDITOR=/usr/bin/emacs
-#EDITOR=/usr/bin/nano
-export EDITOR
+## If I feel like changing editors
+export EDITOR=nvim
+#export EDITOR=emacs
+#export EDITOR=nano
 
 ## Modified commands
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
 alias ping='ping -c 5'
 
 # ls
 alias ls='ls -hF --color=auto'
-alias ll='ls -lh'
-alias la='ll -A'
-alias l='ls -CF'
-alias lr='ls -Ra | more'                    # recursive ls
-alias lm='la | more'
+alias ll='ls -lh --color=auto'
+alias la='ll -A --color=auto'
+alias l='ls -CF --color=auto'
+alias lr='ls -Ra | more' # recursive ls
+alias lm='la --color=auto| more'
 
 ## Safety checks
 alias rm='rm -i' #-i prompts user before deletion
@@ -78,13 +78,28 @@ alias mv='mv -i'
 alias hf='history|fzf'
 alias vim='nvim'
 alias neovim='nvim'
-alias ff='fastfetch'
+alias ff='clear && fastfetch'
 
-#use bat instead of cat temporarily
-alias cat='bat'
+alias bat='bat --paging=never'
+
+alias upd='paru'
+alias cleanup='paru -Sc'
+alias orphan='sudo pacman -Rns $(pacman -Qtdq)'
+
+#notes
+alias notes="nvim $HOME/Dropbox/Obsidian_Vault/steves_vault/00_Inbox/1_Scratch.md"
+
+#use hollywood docker container
+#alias hollywood="docker run -it --rm cgr.dev/chainguard/hollywood"
 
 #add preview to fzf
-alias fzf="fzf --preview='bat --color=always {}'"
+export FZF_DEFAULT_OPTS="--preview='bat --color=always {}'"
+
+# Functions
+ffa() {
+    clear
+    fastfetch -c all.jsonc
+}
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -94,16 +109,11 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-
-PS1='[\u@\h \W]\$ '
+HISTSIZE=50000
+HISTFILESIZE=100000
 
 # run fastfetch
 fastfetch
-
-eval "$(starship init bash)"
 
 # Enable fzf autocomplete and keybindings
 [ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
@@ -119,7 +129,6 @@ source /usr/share/bash-completion/completions/git
 
 # SSH host autocompletion
 complete -o default -o nospace -W "$(awk '/^Host / {for (i=2; i<=NF; i++) print $i}' ~/.ssh/config 2>/dev/null)" ssh scp sftp
-
 
 # Created by `pipx` on 2026-02-22 19:28:29
 export PATH="$PATH:/home/steve/.local/bin"

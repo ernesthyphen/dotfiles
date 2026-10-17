@@ -1,0 +1,10 @@
+# Editor and configuration backups
+*.bak
+*.backup
+*.orig
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp

@@ -1,27 +1,125 @@
-[general]
-import = [
-    "~/.config/alacritty/themes/dracula.toml"
-]
+[window]
+padding = { x = 12, y = 10 }
+dynamic_padding = false
+dimensions = { columns = 120, lines = 34 }
+
+# Enough translucency to integrate with the desktop, but not enough to
+# compromise readability or make the wallpaper part of the terminal.
+opacity = 0.97
+blur = false
+
+decorations_theme_variant = "Dark"
+
 
 [font]
-size = 10.0
+normal = { family = "JetBrains Mono", style = "Regular" }
+bold = { family = "JetBrains Mono", style = "Bold" }
+italic = { family = "JetBrains Mono", style = "Italic" }
+bold_italic = { family = "JetBrains Mono", style = "Bold Italic" }
 
-[font.bold]
-family = "JetBrainsMono NF"
-style = "Bold"
+size = 11.0
 
-[font.bold_italic]
-family = "JetBrainsMono NF"
-style = "Bold Italic"
+# Slightly more breathing room vertically without looking loose.
+offset = { x = 0, y = 1 }
+glyph_offset = { x = 0, y = 0 }
 
-[font.italic]
-family = "JetBrainsMono NF"
-style = "Italic"
+builtin_box_drawing = true
 
-[font.normal]
-family = "JetBrainsMono NF"
-style = "Regular"
 
-[window]
-decorations = "full"
-opacity = 1.0
+[cursor]
+style = { shape = "Block", blinking = "Never" }
+vi_mode_style = { shape = "Block", blinking = "Never" }
+
+unfocused_hollow = true
+thickness = 0.15
+
+
+[colors.primary]
+background = "#080808"
+foreground = "#E7F0E3"
+dim_foreground = "#687064"
+bright_foreground = "#F2F8EF"
+
+
+[colors.cursor]
+cursor = "#6CFF3D"
+text = "#080808"
+
+
+[colors.vi_mode_cursor]
+cursor = "#FFC857"
+text = "#080808"
+
+
+[colors.selection]
+background = "#295B18"
+text = "#E7F0E3"
+
+
+[colors.search.matches]
+foreground = "#080808"
+background = "#FFC857"
+
+[colors.search.focused_match]
+foreground = "#080808"
+background = "#6CFF3D"
+
+
+[colors.footer_bar]
+foreground = "#E7F0E3"
+background = "#171917"
+
+
+[colors.hints.start]
+foreground = "#080808"
+background = "#FFC857"
+
+[colors.hints.end]
+foreground = "#080808"
+background = "#67A7D8"
+
+
+# Normal ANSI palette
+#
+# These are deliberately restrained. ANSI green is the primary accent;
+# other colours remain semantic rather than decorative.
+[colors.normal]
+black   = "#111111"
+red     = "#D95050"
+green   = "#3E9823"
+yellow  = "#C99D42"
+blue    = "#5184AA"
+magenta = "#7E6A7E"
+cyan    = "#4F8C82"
+white   = "#C8D2C4"
+
+
+# Bright ANSI palette
+[colors.bright]
+black   = "#687064"
+red     = "#FF5C5C"
+green   = "#6CFF3D"
+yellow  = "#FFC857"
+blue    = "#67A7D8"
+magenta = "#A88BA8"
+cyan    = "#69B8AA"
+white   = "#E7F0E3"
+
+
+# Explicit dim colours avoid Alacritty calculating inconsistent variants.
+[colors.dim]
+black   = "#080808"
+red     = "#7A3434"
+green   = "#285F1A"
+yellow  = "#80662F"
+blue    = "#385A72"
+magenta = "#514551"
+cyan    = "#355F58"
+white   = "#687064"
+
+
+# Keep application-defined backgrounds solid enough to preserve semantic
+# blocks in tools such as btop, Neovim and fzf.
+[colors]
+transparent_background_colors = false
+draw_bold_text_with_bright_colors = false
