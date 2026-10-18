@@ -2,7 +2,7 @@
 
 My personal dotfiles, managed using [GNU Stow](https://www.gnu.org/software/stow/) for easy symlink management across systems.
 
-## 📁 Structure
+## Structure
 
 Each directory (e.g. `bash`, `nvim`, `alacritty`) contains the config files for that tool, structured to match their expected paths from `$HOME`.
 
@@ -19,9 +19,7 @@ Example:
 └── alacritty
 ```
 
-## 🔧 Usage
-
-### 📦 Install
+### Install
 
 Clone the repo into your home directory or somewhere convenient:
 
@@ -42,11 +40,3 @@ To remove (unstow) a config:
 stow -D nvim
 ```
 
-## 🖥 Restore on a new machine
-Clone this repo
-
-Install GNU Stow (sudo pacman -S stow on Arch)
-
-Run stow for each set of configs you want
-
-### 📝 Feel free to fork or use as a template for your own dotfiles!
