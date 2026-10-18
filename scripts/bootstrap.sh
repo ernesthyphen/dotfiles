@@ -92,14 +92,38 @@ main() {
         sudo pacman -S --needed -- "${official[@]}"
     fi
 
-    if ((${#foreign[@]})); then
-        if ! command -v paru >/dev/null; then
-            echo "paru is required to restore foreign/AUR packages." >&2
+if ((${#foreign[@]})); then
+    if ! command -v paru >/dev/null; then
+        echo "paru is not installed."
+        echo "Bootstrap paru from the AUR first."
+
+        if ! command -v git >/dev/null ||
+           ! command -v makepkg >/dev/null; then
+            echo "Missing git or makepkg." >&2
             return 1
         fi
 
-        paru -S --needed -- "${foreign[@]}"
+        local build_dir
+        build_dir="$(mktemp -d)"
+
+        git clone https://aur.archlinux.org/paru.git \
+            "$build_dir/paru"
+
+        (
+            cd "$build_dir/paru"
+            makepkg -si
+        )
+
+        rm -rf -- "$build_dir"
+
+        command -v paru >/dev/null || {
+            echo "paru installation failed." >&2
+            return 1
+        }
     fi
+
+    paru -S --needed -- "${foreign[@]}"
+fi
 
     if ((${#flatpaks[@]})); then
         if ! command -v flatpak >/dev/null; then
