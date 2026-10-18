@@ -1,0 +1,11 @@
+appimagelauncher
+brave-bin
+bridge-utils
+dropbox
+heroic-games-launcher-bin
+hollywood
+megasync
+minecraft-launcher
+paru
+protonplus
+rtl8812au-dkms-git
