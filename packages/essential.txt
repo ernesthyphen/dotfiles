@@ -1,0 +1,38 @@
+# Desktop
+plasma-meta
+sddm
+networkmanager
+pipewire
+pipewire-alsa
+pipewire-pulse
+wireplumber
+xdg-desktop-portal-kde
+
+# Applications
+alacritty
+kate
+dolphin
+firefox
+ark
+okular
+
+# CLI utilities
+git
+stow
+fastfetch
+fzf
+bat
+eza
+fd
+zoxide
+rsync
+unzip
+
+# Fonts
+inter-font
+ttf-jetbrains-mono-nerd
+noto-fonts
+
+# Recovery
+openssh
+base-devel
