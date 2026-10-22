@@ -8,7 +8,7 @@
     "padding": {
       "top": 0,
       "left": 0,
-      "right": 2
+      "right": 1
     },
 
     // Phosphor cyan and purple.
@@ -59,7 +59,7 @@
       "key": " ",
       "keyColor": "#7DD3FC",
       "outputColor": "#E2E8F0",
-      "format": "{pacman} (pacman) {flatpak-all} (flatpak)"
+      "format": "{pacman} pacman · {flatpak-all} flatpak"
     },
     {
       "type": "shell",
@@ -81,6 +81,7 @@
     },
     {
       "type": "display",
+      "format": "{width}x{height} @ {refresh-rate}Hz",
       "key": " ",
       "keyColor": "#A78BFA",
       "outputColor": "#E2E8F0"
@@ -117,7 +118,7 @@
       "key": "󰋊 ",
       "keyColor": "#FBBF24",
       "outputColor": "#E2E8F0",
-      "format": "{mount-from} - {size-used} / {size-total} ({size-percentage})"
+      "format": "{mountpoint}: {size-used} / {size-total} ({size-percentage})"
     },
     {
       "type": "uptime",
@@ -138,9 +139,6 @@
     {
         "type": "custom",
         "format": "{##94A3B8}  {##FB7185}  {##86EFAC}  {##FBBF24}  {##7DD3FC}  {##A78BFA}{#}"
-    },
-
-    "break",
-    "break"
+    }
   ]
 }
