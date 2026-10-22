@@ -1,7 +1,7 @@
 [window]
 padding = { x = 12, y = 10 }
 dynamic_padding = false
-dimensions = { columns = 120, lines = 34 }
+dimensions = { columns = 80, lines = 24 }
 
 # Enough translucency to integrate with the desktop, but not enough to
 # compromise readability or make the wallpaper part of the terminal.
